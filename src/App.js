@@ -36,7 +36,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
-                <Route path='/login' element={!user ? <Login /> : <Navigate to='/dashboard' />} />
+                <Route path='/login' element={!user ? <Login /> : <Dashboard value={{ user }} />} />
                 <Route path='/register' element={!user ? <Register /> : <Navigate to='/login' />} />
                 <Route path='/dashboard' element={user ? <Dashboard value={{ user }}/> : <Navigate to='/login' />} />
               </Routes>
